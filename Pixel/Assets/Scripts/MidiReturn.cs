@@ -15,7 +15,7 @@ public class MidiReturn : MonoBehaviour
     public Transform pixelParent;
    
 
-    String[] note_names = { "|", "do", "re", "mi", "fa", "so", "la", "si" };
+    String[] note_names = { "|", "do", "re", "mi", "fa", "sol", "la", "si" };
     //public String getNoteFromMidiNumber(int midiNote)
     //{
     //    String[] note_names = {" ", "Do", "Re", "Mi", "Fa", "So", "La", "Si"};
@@ -43,7 +43,7 @@ public class MidiReturn : MonoBehaviour
             var index = Array.FindIndex(note_names, row => row.Contains(Notes[i]));
             Image obj= Instantiate(pixelObj, pixelParent);
             obj.color = getNoteFromMidiColor(index);
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(0.1f);
         }
        
     }
