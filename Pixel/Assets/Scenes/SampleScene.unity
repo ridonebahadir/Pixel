@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &28628283
 RectTransform:
   m_ObjectHideFlags: 0
@@ -230,19 +230,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\u0131nputPanel": {fileID: 28628282}
-  "\u0131nputField": {fileID: 556701881}
-  Notes: []
-  color:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 1, g: 0.3706433, b: 0, a: 1}
-  - {r: 1, g: 0.93073094, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0.10002494, a: 1}
-  - {r: 0, g: 0.50500107, b: 1, a: 1}
-  - {r: 0.020634651, g: 0, b: 1, a: 1}
-  - {r: 0.8844104, g: 0, b: 1, a: 1}
   pixelObj: {fileID: 7979582780344303232, guid: 27a65edd62973dc4c935fc52c5ffe4e6, type: 3}
   pixelParent: {fileID: 434391653}
+  csvReader: {fileID: 1773250830}
 --- !u!4 &243036600
 Transform:
   m_ObjectHideFlags: 0
@@ -332,8 +322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 112e5a5404cd5604ea5a0430033f59e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  col: 7
-  row: 2
+  col: 30
+  row: 30
 --- !u!114 &434391656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -925,6 +915,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221928039}
   m_CullTransparentMesh: 1
+--- !u!1 &1773250829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1773250831}
+  - component: {fileID: 1773250830}
+  m_Layer: 0
+  m_Name: Midi Csv
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1773250830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773250829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6742847b8c6ae348b110740c54d03a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textAssetData: {fileID: 4900000, guid: a6a8db5ddaac29043a4a20860d767706, type: 3}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 0, b: 0, a: 1}
+    key1: {r: 1, g: 0.53342336, b: 0, a: 1}
+    key2: {r: 0, g: 0.72298765, b: 1, a: 0}
+    key3: {r: 0.049554825, g: 1, b: 0, a: 0}
+    key4: {r: 0, g: 0.9400208, b: 1, a: 0}
+    key5: {r: 0, g: 0.16267395, b: 1, a: 0}
+    key6: {r: 1, g: 0, b: 0.8341012, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 9175
+    ctime1: 18350
+    ctime2: 27542
+    ctime3: 36700
+    ctime4: 45875
+    ctime5: 55705
+    ctime6: 65535
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 7
+    m_NumAlphaKeys: 2
+  myMusicList:
+    musicNotes: []
+--- !u!4 &1773250831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773250829}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 370.21176, y: -476.65497, z: -88.53705}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1851580178
 GameObject:
   m_ObjectHideFlags: 0

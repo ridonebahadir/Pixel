@@ -7,43 +7,34 @@ using UnityEngine.UI;
 public class MidiReturn : MonoBehaviour
 {
     public GameObject ýnputPanel;
-    public InputField ýnputField;
-    public String[] Notes;
-    public Color[] color;
-    //public Image[] image;
+   
     public Image pixelObj;
     public Transform pixelParent;
-   
+    public CsvReader csvReader;
 
-    String[] note_names = { "|", "do", "re", "mi", "fa", "sol", "la", "si" };
-    //public String getNoteFromMidiNumber(int midiNote)
-    //{
-    //    String[] note_names = {" ", "Do", "Re", "Mi", "Fa", "So", "La", "Si"};
-    //    return note_names[midiNote];
-    //}
-    public Color getNoteFromMidiColor(int midiNote)
+    int Count;
+    private void Start()
     {
-        Color[] note_color = {  color[0], color[1], color[2], color[3],color[4],color[5],color[6], color[7]};
-        return note_color[midiNote];
+        Count = csvReader.myMusicList.musicNotes.Length;
+        //StartCoroutine(InstantiatePixel());
+        for (int i = 0; i < Count; i++)
+        {
+            //var index = Array.FindIndex(note_names, row => row.Contains(Notes[i]));
+            Image obj = Instantiate(pixelObj, pixelParent);
+            obj.color = csvReader.myMusicList.musicNotes[i].color;
+           
+        }
     }
+
    
-    public void ConvertNotes()
-    {
-        Notes = ýnputField.text.Split(' ');
-        ýnputPanel.SetActive(false);
-        StartCoroutine(InstantiatePixel());
-       
-        
-        
-    }
     IEnumerator InstantiatePixel()
     {
-        for (int i = 0; i < Notes.Length; i++)
+        for (int i = 0; i < Count; i++)
         {
-            var index = Array.FindIndex(note_names, row => row.Contains(Notes[i]));
+            //var index = Array.FindIndex(note_names, row => row.Contains(Notes[i]));
             Image obj= Instantiate(pixelObj, pixelParent);
-            obj.color = getNoteFromMidiColor(index);
-            yield return new WaitForSeconds(0.1f);
+            obj.color = csvReader.myMusicList.musicNotes[i].color;
+            yield return new WaitForSeconds(0);
         }
        
     }
