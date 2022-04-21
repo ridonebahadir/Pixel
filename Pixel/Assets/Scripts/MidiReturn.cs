@@ -15,20 +15,27 @@ public class MidiReturn : MonoBehaviour
     int Count;
     private void Start()
     {
-        Count = csvReader.myMusicList.musicNotes.Length;
+
         //StartCoroutine(InstantiatePixel());
+        Invoke("ReadCsv",1f);
+        
+    }
+
+   void ReadCsv()
+    {
+        Count = csvReader.myMusicList.musicNotes.Length;
         for (int i = 0; i < Count; i++)
         {
             //var index = Array.FindIndex(note_names, row => row.Contains(Notes[i]));
             Image obj = Instantiate(pixelObj, pixelParent);
             obj.color = csvReader.myMusicList.musicNotes[i].color;
-           
+            
         }
     }
-
-   
     IEnumerator InstantiatePixel()
     {
+        yield return new WaitForSeconds(3);
+        Count = csvReader.myMusicList.musicNotes.Length;
         for (int i = 0; i < Count; i++)
         {
             //var index = Array.FindIndex(note_names, row => row.Contains(Notes[i]));
